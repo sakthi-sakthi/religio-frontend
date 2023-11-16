@@ -1,7 +1,7 @@
 ### Installing and running the Following commands
 
 ```
-git clone 
+git clone https://github.com/Muniraj132/religio-react.git
 ```
 
 ```
