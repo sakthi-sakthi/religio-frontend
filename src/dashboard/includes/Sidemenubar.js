@@ -13,7 +13,7 @@ function Sidemenubar() {
     <nav className="sidebar sidebar-offcanvas" id="sidebar">
       <ul className="nav">
         <li className="nav-item nav-profile">
-          <a href="#" className="nav-link">
+          <a href={() => false} className="nav-link">
             <div className="nav-profile-image">
               <img
                 src="/dashboard/assets/images/faces/face1.jpg"
@@ -89,7 +89,7 @@ function Sidemenubar() {
           className={`${navitem} ${
             pathname.includes("/Religio/PaymentStatus") && "active"
           }`}>
-          {isLogedIn?.role == "admin" ? (
+          {isLogedIn?.role === "admin" ? (
             <Link to="/Religio/PaymentStatus" className="nav-link">
               <span className="menu-title">Payment Status</span>
               <i className="mdi mdi-cash-multiple menu-icon" />
@@ -109,7 +109,7 @@ function Sidemenubar() {
           className={`${navitem} ${
             pathname.includes("/Religio/UsersList") && "active"
           }`}>
-          {isLogedIn?.role == "admin" ? (
+          {isLogedIn?.role === "admin" ? (
             <Link to="/Religio/UsersList" className="nav-link">
               <span className="menu-title">Manage Users</span>
               <i className="mdi mdi-account-circle menu-icon" />

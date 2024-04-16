@@ -4,7 +4,6 @@ import Main from "./includes/Main";
 import Footer from "./includes/Footer";
 import $ from 'jquery';
 import "./scss/style.scss";
-import { useNavigate } from "react-router-dom";
 
 
 
@@ -20,8 +19,6 @@ function DashLayouts() {
         clearTimeout(autoLogoutTimer)
         autoLogoutTimer = setTimeout(idleLogout, 1800000) // 1000 = 1 second
     }
-
-    const navigate = useNavigate();
     // idleLogout is used to Actual navigate to logout
     function idleLogout() {
         localStorage.removeItem("userDetails");
