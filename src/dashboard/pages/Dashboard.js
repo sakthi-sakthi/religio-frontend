@@ -12,7 +12,7 @@ function Dashboard() {
   const cyear = today.getFullYear();
   const fyear = cyear + 1;
   const financial = `${cyear}-${fyear}`;
-  const cday = today.getDate();
+  // const cday = today.getDate();
   // console.log(cday);
   // if (cday == "1") {
   // axios
@@ -465,14 +465,14 @@ function Dashboard() {
           </span>{" "}
           Dashboard
         </h3>
-        {isLogedIn?.role == "admin" ? (
+        {isLogedIn?.role === "admin" ? (
           <nav aria-label="breadcrumb">
             <ul className="breadcrumb">
               <li className="nav-item nav-profile dropdown">
                 <a
                   className="nav-link "
                   id="profileDropdown"
-                  href="#"
+                  href={() => false}
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <div className="nav-profile-img">
@@ -488,6 +488,7 @@ function Dashboard() {
                   className="dropdown-menu navbar-dropdown nav-profile-text"
                   aria-labelledby="profileDropdown">
                   <a
+                   href={() => false}
                     className="dropdown-item"
                     style={{ cursor: "pointer" }}
                     onClick={getData}>
@@ -495,6 +496,7 @@ function Dashboard() {
                     New Sales
                   </a>
                   <a
+                   href={() => false}
                     className="dropdown-item"
                     style={{ cursor: "pointer" }}
                     onClick={getData}>
@@ -502,6 +504,7 @@ function Dashboard() {
                     AMC
                   </a>
                   <a
+                   href={() => false}
                     className="dropdown-item"
                     style={{ cursor: "pointer" }}
                     onClick={getData}>
@@ -515,14 +518,14 @@ function Dashboard() {
         ) : (
           ""
         )}
-        {isLogedIn?.role == "admin" ? (
+        {isLogedIn?.role === "admin" ? (
           <nav aria-label="breadcrumb" id="monthnav">
             <ul className="breadcrumb">
               <li className="nav-item nav-profile dropdown">
                 <a
                   className="nav-link "
                   id="profileDropdown"
-                  href="#"
+                  href={() => false}
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <div className="nav-profile-img">
@@ -538,14 +541,16 @@ function Dashboard() {
                   className="dropdown-menu navbar-dropdown"
                   aria-labelledby="profileDropdown">
                   <a
+                   href={() => false}
                     className="dropdown-item"
                     style={{ cursor: "pointer" }}
                     onClick={getMonthData}>
                     {/* <i className="mdi mdi-check-all me-2 text-primary" /> */}
                     Select All
                   </a>
-                  {Month.map((item) => (
+                  {Month?.map((item) => (
                     <a
+                    href={() => false}
                       className="dropdown-item"
                       style={{ cursor: "pointer" }}
                       onClick={getMonthData}>
@@ -560,14 +565,14 @@ function Dashboard() {
         ) : (
           ""
         )}
-        {isLogedIn?.role == "admin" ? (
+        {isLogedIn?.role === "admin" ? (
           <nav aria-label="breadcrumb">
             <ul className="breadcrumb">
               <li className="nav-item nav-profile dropdown">
                 <a
-                  className="nav-link "
+                 href={() => false}
+                  className="nav-link"
                   id="profileDropdown"
-                  href="#"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <div className="nav-profile-img">
@@ -585,14 +590,16 @@ function Dashboard() {
                   className="dropdown-menu navbar-dropdown"
                   aria-labelledby="profileDropdown">
                   <a
+                   href={() => false}
                     className="dropdown-item"
                     style={{ cursor: "pointer" }}
                     onClick={getData}>
                     {/* <i className="mdi mdi-check-all me-2 text-primary" /> */}
                     Select All
                   </a>
-                  {year.map((item) => (
+                  {year?.map((item) => (
                     <a
+                    href={() => false}
                       className="dropdown-item"
                       key={item}
                       style={{ cursor: "pointer" }}
@@ -609,7 +616,7 @@ function Dashboard() {
           ""
         )}
       </div>
-      {isLogedIn?.role == "admin" ? (
+      {isLogedIn?.role === "admin" ? (
         <div className="row">
           <div className="col-md-4 stretch-card grid-margin">
             <div className="card bg-gradient-success card-img-holder text-white">
@@ -617,7 +624,7 @@ function Dashboard() {
                 <img
                   src="/dashboard/assets/images/dashboard/circle.svg"
                   className="card-img-absolute"
-                  alt="circle-image"
+                  alt="circle"
                 />
                 <h4 className="font-weight-normal mb-3">
                   <span id="hdvalue">New Sales</span>
@@ -639,7 +646,7 @@ function Dashboard() {
                 <img
                   src="/dashboard/assets/images/dashboard/circle.svg"
                   className="card-img-absolute"
-                  alt="circle-image"
+                  alt="circle"
                 />
                 <h4 className="font-weight-normal mb-3">
                   <span id="thisclient">Received Amount</span>
@@ -660,7 +667,7 @@ function Dashboard() {
                 <img
                   src="/dashboard/assets/images/dashboard/circle.svg"
                   className="card-img-absolute"
-                  alt="circle-image"
+                  alt="circle"
                 />
                 <h4 className="font-weight-normal mb-3">
                   <span id="Balance">Balance</span>

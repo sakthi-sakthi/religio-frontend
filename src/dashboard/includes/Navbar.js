@@ -1,7 +1,5 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
-import ApiUrl from "../pages/Api/Api";
 import $ from "jquery";
 
 function hidemenubar() {
@@ -28,18 +26,18 @@ function Navbar() {
     navigate("/login");
   };
 
-  useEffect(() => {
-    axios
-      .get(`${ApiUrl}/Religio/Balance/notification`)
-      .then((response) => {
-        const resData = response.data;
-        notificationData(resData.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  const [data, notificationData] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${ApiUrl}/Religio/Balance/notification`)
+  //     .then((response) => {
+  //       const resData = response.data;
+  //       notificationData(resData.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
+  // const [data, notificationData] = useState([]);
 
   function notificationAMC() {
     navigate("/Religio/AMC/Notification");
@@ -47,18 +45,18 @@ function Navbar() {
   function notifiyOutstanding() {
     navigate("/Religio/Outstanding/Notification");
   }
-  function notificationDomain() {
-    navigate("/Religio/UpcomingDomainRenewel");
-  }
+  // function notificationDomain() {
+  //   navigate("/Religio/UpcomingDomainRenewel");
+  // }
 
   return (
     <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a className="navbar-brand brand-logo" href="">
+        <a className="navbar-brand brand-logo"  href={() => false}>
           Religio Management
         </a>
-        <a className="navbar-brand brand-logo-mini" href="">
-          <img src="/relogio.png"></img>
+        <a  href={() => false} className="navbar-brand brand-logo-mini">
+          <img src="/relogio.png" alt="logo"></img>
         </a>
       </div>
       <div className="navbar-menu-wrapper d-flex align-items-stretch">
@@ -84,7 +82,7 @@ function Navbar() {
             <a
               className="nav-link count-indicator dropdown-toggle"
               id="notificationDropdown"
-              href="#"
+               href={() => false}
               data-bs-toggle="dropdown">
               <i className="mdi mdi-bell-outline" />
               <span className="count-symbol bg-danger" />
@@ -95,6 +93,7 @@ function Navbar() {
               <h6 className="p-3 mb-0">Notifications</h6>
               <div className="dropdown-divider" />
               <a
+               href={() => false}
                 className="dropdown-item preview-item"
                 onClick={notificationAMC}>
                 <div className="preview-thumbnail">
@@ -113,6 +112,7 @@ function Navbar() {
                 </div>
               </a>
               <a
+               href={() => false}
                 className="dropdown-item preview-item"
                 onClick={notifiyOutstanding}>
                 <div className="preview-thumbnail">
@@ -149,13 +149,13 @@ function Navbar() {
             <a
               className="nav-link dropdown-toggle"
               id="profileDropdown"
-              href="#"
+               href={() => false}
               data-bs-toggle="dropdown"
               aria-expanded="false">
               <div className="nav-profile-img">
                 <img
                   src="/dashboard/assets/images/faces/face1.jpg"
-                  alt="image"
+                  alt="face"
                 />
                 <span className="availability-status online" />
               </div>
@@ -166,11 +166,12 @@ function Navbar() {
             <div
               className="dropdown-menu navbar-dropdown"
               aria-labelledby="profileDropdown">
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item"  href={() => false}>
                 <i className="mdi mdi-cached me-2 text-success" /> Activity Log{" "}
               </a>
               <div className="dropdown-divider" />
               <a
+               href={() => false}
                 className="dropdown-item"
                 onClick={() => handleSignOut()}
                 style={{ cursor: "pointer" }}>
@@ -180,7 +181,7 @@ function Navbar() {
             </div>
           </li>
           <li className="nav-item nav-settings d-none d-lg-block">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href={() => false}>
               <i className="mdi mdi-format-line-spacing" />
             </a>
           </li>
