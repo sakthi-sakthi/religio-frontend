@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import { Link, useNavigate } from "react-router-dom";
-import $ from "jquery";
 import DataTable from "react-data-table-component";
 
 function PaymentList() {
@@ -96,6 +95,7 @@ function PaymentList() {
       selector: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => ViewPaymentStatus(e, row.id)}
             className="my-component">
             {row.congregation}
@@ -157,18 +157,21 @@ function PaymentList() {
       name: "Action",
       selector: (row) => [
         <a
+          href={() => false}
           onClick={(e) => ViewPaymentStatus(e, row.id)}
           style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
-          className="mdi mdi-eye"></a>,
+          className="mdi mdi-eye"> </a>,
         <a
+          href={() => false}
           onClick={(e) => EditClientregistration(e, row.id)}
           style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
-          className="mdi mdi-pencil-box"></a>,
+          className="mdi mdi-pencil-box"> </a>,
 
         <a
+          href={() => false}
           onClick={(e) => deleteregister(e, row.id)}
           style={{ cursor: "pointer", color: "black" }}
-          className="mdi mdi-delete"></a>,
+          className="mdi mdi-delete"> </a>,
       ],
       width: "100px",
       fixed: "right",
@@ -248,7 +251,7 @@ function PaymentList() {
                 </div>
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" ? (
+                  {isLogedIn?.role === "admin" ? (
                     <Link to="/Religio/PaymentCreate">
                       <i
                         class="fa-solid fa-user-plus"

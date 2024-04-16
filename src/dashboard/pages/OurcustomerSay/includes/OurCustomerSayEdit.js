@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../../Api/Api";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import $ from "jquery";
 
 function OurclientView() {
 
@@ -83,7 +82,7 @@ function OurclientView() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   useEffect(() => {
     fetch(`${ApiUrl}/Religio/Province/Congregation`)

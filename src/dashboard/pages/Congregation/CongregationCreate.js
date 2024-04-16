@@ -12,7 +12,6 @@ function CongregationCreate() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({ mode: "onChange" });
 
@@ -309,7 +308,7 @@ function CongregationCreate() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
+                            // pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />

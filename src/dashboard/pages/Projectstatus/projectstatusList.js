@@ -3,13 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import { Link, useNavigate } from "react-router-dom";
-
-
-
-
-
 function ProjectstatusList(){
-
 
   const fetchData = ()=>{
         fetch(`${ApiUrl}/projectstatus`).then((res) => {
@@ -103,9 +97,9 @@ const projectDelete = async (e,id) =>{
                           <td>{item.prodURL}</td>
                           <td>{item.textusername }</td>
                           <td>{item.produsername }</td>
-                          <td id="noprint"><a onClick={(e) => projectEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
+                          <td id="noprint"><a href={() => false} onClick={(e) => projectEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
                           
-                          &nbsp;<a onClick={(e) => projectDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                          &nbsp;<a href={() => false} onClick={(e) => projectDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
                       </td>
                       </tr>   
                       ))

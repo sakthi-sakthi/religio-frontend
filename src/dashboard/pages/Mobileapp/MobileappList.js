@@ -91,9 +91,9 @@ return (
                     <tr key={item.id}>
                         <td>{YYYYMMDDTODDMMYYYY(item.mobiledate)}</td>
                         <td>{item.mobilestatus }</td>
-                        <td id="noprint"><a onClick={(e) => mobileappEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
+                        <td id="noprint"><a href={() => false} onClick={(e) => mobileappEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
                         
-                        &nbsp;<a onClick={(e) => mobileappDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                        &nbsp;<a href={() => false} onClick={(e) => mobileappDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
                     </td>
                     </tr>   
                     ))

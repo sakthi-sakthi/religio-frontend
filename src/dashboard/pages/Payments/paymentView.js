@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import AppUrl from "../Api/Url";
 
 function PaymentView() {
@@ -48,7 +47,7 @@ function PaymentView() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const [balanceAmount, setbalanceamount] = useState("");
 
@@ -112,7 +111,7 @@ function PaymentView() {
             <div className="card-body">
               <form className="form-sample">
                 <div className="form-group">
-                  {balanceAmount == 0 ? (
+                  {balanceAmount === 0 ? (
                     <div className="alert alert-success">
                       Payment<strong> Paid.</strong>
                     </div>

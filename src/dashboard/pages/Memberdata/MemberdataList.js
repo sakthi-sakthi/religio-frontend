@@ -92,9 +92,9 @@ return (
                     <tr key={item.id}>
                         <td>{YYYYMMDDTODDMMYYYY(item.memberdate)}</td>
                         <td>{item.memberstatus}</td>
-                        <td id="noprint"><a onClick={(e) => memberdataEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
+                        <td id="noprint"><a href={() => false} onClick={(e) => memberdataEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
                         
-                        &nbsp;<a onClick={(e) => memberdataDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                        &nbsp;<a href={() => false} onClick={(e) => memberdataDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
                     </td>
                     </tr>   
                     ))

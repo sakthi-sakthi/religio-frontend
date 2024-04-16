@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import $ from "jquery";
 
 function CongregationView() {
@@ -11,10 +9,9 @@ function CongregationView() {
     register,
     handleSubmit,
     reset,
-    setValue,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-  const navigate = useNavigate();
+
   const country = require("country-state-city").Country;
   const value = country.getAllCountries();
   const { id } = useParams();
@@ -36,7 +33,7 @@ function CongregationView() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   function countrySelect(event) {
     var value = event.target.value;
@@ -306,7 +303,7 @@ function CongregationView() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
+                            // pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />

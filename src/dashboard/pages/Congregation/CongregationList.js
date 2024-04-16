@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import DataTable from "react-data-table-component";
 
@@ -103,6 +103,7 @@ function CongregationList() {
       cell: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => Viewcongregation(e, row.id)}
             className="my-component">
             {row.congregation}
@@ -126,20 +127,23 @@ function CongregationList() {
       cell: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => Viewcongregation(e, row.id)}
             style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
-            className="mdi mdi-eye"></a>
+            className="mdi mdi-eye"> </a>
           {isLogedIn?.role === "admin" && (
             <>
               <a
+                href={() => false}
                 onClick={(e) => EditCongregation(e, row.id)}
                 style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
-                className="mdi mdi-pencil-box"></a>
+                className="mdi mdi-pencil-box"> </a>
 
               <a
+                href={() => false}
                 onClick={(e) => deleteCongregation(e, row.id)}
                 style={{ cursor: "pointer", color: "black" }}
-                className="mdi mdi-delete"></a>
+                className="mdi mdi-delete"> </a>
             </>
           )}
         </>
@@ -191,14 +195,14 @@ function CongregationList() {
     Setcongregation(filter);
   }
   const [pending, setPending] = React.useState(true);
-  const [rows, setRows] = React.useState([]);
+  
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      setRows(Cong);
+      // setRows(Cong);
       setPending(false);
     }, 500);
     return () => clearTimeout(timeout);
-  }, []);
+  });
   return (
     <div className="content-wrapper">
       <div className="page-header">
@@ -226,7 +230,7 @@ function CongregationList() {
 
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" ? (
+                  {isLogedIn?.role === "admin" ? (
                     <Link to="/Religio/Congregation/Add">
                       <i
                         class="fa-solid fa-user-plus"

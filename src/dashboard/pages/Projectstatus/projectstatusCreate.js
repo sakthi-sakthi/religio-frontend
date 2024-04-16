@@ -3,8 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, Routes, Route, useNavigate, useParams } from "react-router-dom";
-import Navbar from "../../includes/Navbar";
+import { useParams } from "react-router-dom";
 
 function Projectstatuscreate({ dash, data }) {
   const {
@@ -13,7 +12,6 @@ function Projectstatuscreate({ dash, data }) {
     reset,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-  const navigate = useNavigate();
 
   // edit button ennable & disable
   const [isEditable, setIsEditable] = useState(false);
@@ -33,7 +31,6 @@ function Projectstatuscreate({ dash, data }) {
     right: "10px",
     top: "70%",
     transform: "translateY(-50%)",
-    cursor: "pointer",
     cursor: "pointer",
   };
 
@@ -81,7 +78,7 @@ function Projectstatuscreate({ dash, data }) {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
   const isLogedIn = JSON.parse(sessionStorage.getItem("userDetails"));
   function onSubmitProjectstatus(data, e) {
     if (isEditable) return;
@@ -342,7 +339,7 @@ function Projectstatuscreate({ dash, data }) {
                 )}
               </div>
             </div>
-            {isLogedIn?.role == "admin" ? (
+            {isLogedIn?.role === "admin" ? (
               <div className="text-center">
                 <button
                   type="submit"

@@ -7,9 +7,6 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import ApiUrl from '../Api/Api';
 import $ from "jquery";
-
-
-
 $(function () {
     $("#toggle_rcpwd").click(function () {
       $("#toggle-rceye").toggleClass("fa-eye-slash");

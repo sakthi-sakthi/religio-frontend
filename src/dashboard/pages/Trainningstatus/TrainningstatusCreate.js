@@ -3,8 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, Routes, Route, useNavigate, useParams } from "react-router-dom";
-import Navbar from "../../includes/Navbar";
+import { useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 
 function Trainningstatuscreate() {
@@ -152,7 +151,7 @@ function Trainningstatuscreate() {
   useEffect(() => {
     onsitestatusget();
     onlinestatus();
-  }, []);
+  });
 
   const [ratings, setRatings] = useState(0);
 
@@ -346,7 +345,7 @@ function Trainningstatuscreate() {
               </div>
 
               <div className="text-center">
-                {isLogedIn?.role == "admin" ? (
+                {isLogedIn?.role === "admin" ? (
                   <button
                     type="submit"
                     class="btn btn-gradient-light"
@@ -504,7 +503,7 @@ function Trainningstatuscreate() {
               </div>
 
               <div className="text-center">
-                {isLogedIn?.role == "admin" ? (
+                {isLogedIn?.role === "admin" ? (
                   <button
                     type="submit"
                     class="btn btn-gradient-light"

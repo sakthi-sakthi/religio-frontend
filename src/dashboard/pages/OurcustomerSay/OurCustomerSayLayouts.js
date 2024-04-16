@@ -19,8 +19,8 @@ function OurCustomerSayLayouts() {
             <div className="container-fluid page-body-wrapper">
                 <Sidemenubar />
                 <div className="main-panel">
-                    {pathname == "/Religio/HomeSections/OurCustomerSay" && <OurCustomerSayList />}
-                    {pathname == "/Religio/HomeSections/OurCustomerSay/Create" && <OurCustomerSayCreate />}
+                    {pathname === "/Religio/HomeSections/OurCustomerSay" && <OurCustomerSayList />}
+                    {pathname === "/Religio/HomeSections/OurCustomerSay/Create" && <OurCustomerSayCreate />}
                     {pathname.includes('/Religio/HomeSections/OurCustomerSay/Edit/') && <OurCustomerSayEdit />}
                     {pathname.includes('/Religio/HomeSections/OurCustomerSay/View/') && <OurCustomerSayView />}
                     <Footer />

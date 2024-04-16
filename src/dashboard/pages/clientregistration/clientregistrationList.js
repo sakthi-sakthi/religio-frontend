@@ -82,6 +82,7 @@ function ClientregistrationList() {
       cell: (row) => (
         <>
           <a
+           href={() => false}
             onClick={(e) => peojectstatsadd(e, row.id)}
             className="my-component">
             {row.congregation}
@@ -110,22 +111,25 @@ function ClientregistrationList() {
       cell: (row) => (
         <>
           <a
+           href={() => false}
             onClick={(e) => peojectstatsadd(e, row.id)}
             style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
             className="mdi mdi-eye"
-            id="print"></a>
+            id="print"> </a>
           {isLogedIn?.role === "admin" && (
             <>
               <a
+               href={() => false}
                 onClick={(e) => EditClientregistration(e, row.id)}
                 style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
                 className="mdi mdi-pencil-box"
-                id="print"></a>
+                id="print"> </a>
               <a
+                href={() => false}
                 onClick={(e) => deleteregister(e, row.id)}
                 style={{ cursor: "pointer", color: "black" }}
                 className="mdi mdi-delete"
-                id="print"></a>
+                id="print"> </a>
             </>
           )}
         </>
@@ -178,14 +182,14 @@ function ClientregistrationList() {
   }
 
   const [pending, setPending] = React.useState(true);
-  const [rows, setRows] = React.useState([]);
+  // const [rows, setRows] = React.useState([]);
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      setRows(register);
+      // setRows(register);
       setPending(false);
     }, 500);
     return () => clearTimeout(timeout);
-  }, []);
+  });
   return (
     <div className="content-wrapper">
       <div className="page-header">
@@ -212,7 +216,7 @@ function ClientregistrationList() {
                 </div>
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" ? (
+                  {isLogedIn?.role === "admin" ? (
                     <Link to="/Religio/Clientregistration/Add">
                       <i
                         class="fa-solid fa-user-plus"

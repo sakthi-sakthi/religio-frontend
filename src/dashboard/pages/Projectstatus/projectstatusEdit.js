@@ -3,7 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProjectstatusEdit() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: 'onChange' });
@@ -18,7 +18,7 @@ function ProjectstatusEdit() {
     }).catch((err) => {
       console.log(err.message);
     })
-  }, [])
+  })
 
 
   const regex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'); 
@@ -31,7 +31,6 @@ function ProjectstatusEdit() {
   top: '70%',
   transform: 'translateY(-50%)',
   cursor: 'pointer',
-  cursor: 'pointer'
   };
 
 

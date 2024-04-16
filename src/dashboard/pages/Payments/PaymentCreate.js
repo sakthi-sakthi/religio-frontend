@@ -3,16 +3,12 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 
 function PaymentCreate() {
   $("#uniquefile").hide();
   $("#uniquefilereceipt").hide();
-
-  const styles = {
-    color: "#000000",
-  };
 
   const {
     register,
@@ -158,7 +154,6 @@ function PaymentCreate() {
   // Auto Calculate Balance
   //const [provalue, setProvalue] = useState("");
   const [paidvalue, setPaidvalue] = useState("");
-  const [amcvalue, setAmcvalue] = useState("");
   const [orgvalue, setOrgvalue] = useState("");
 
   const [paidbalvalue, setPaidbalvalue] = useState("");
@@ -173,7 +168,7 @@ function PaymentCreate() {
   };
 
   const amcvalueChange = (event) => {
-    setAmcvalue(event.target.value);
+    // setAmcvalue(event.target.value);
     setOrgvalue(event.target.value);
   };
 

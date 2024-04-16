@@ -91,9 +91,9 @@ function IosList() {
                         <tr key={item.id}>
                           <td>{YYYYMMDDTODDMMYYYY(item.Iosdate)}</td>
                           <td>{item.Iosstatus}</td>
-                          <td id="noprint"><a onClick={(e) => iosdataEdit(e, item.id)} style={{ cursor: 'pointer' }} className="mdi mdi-pencil-box" id="print">Edit</a>
+                          <td id="noprint"><a href={() => false} onClick={(e) => iosdataEdit(e, item.id)} style={{ cursor: 'pointer' }} className="mdi mdi-pencil-box" id="print">Edit</a>
 
-                            &nbsp;<a onClick={(e) => iosdataDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                            &nbsp;<a href={() => false} onClick={(e) => iosdataDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
                           </td>
                         </tr>
                       ))

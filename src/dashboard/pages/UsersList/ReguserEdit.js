@@ -39,7 +39,7 @@ function ReguserEdit() {
     }).catch((err) => {
       console.log(err.message);
     })
-  }, [])
+  })
 
   function onSubmitEditform(data, e) {
     axios.put(`${ApiUrl}/Religio/Userupdate/${id}`, data)

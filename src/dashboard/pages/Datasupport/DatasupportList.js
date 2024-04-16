@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import { Link, useNavigate } from "react-router-dom";
+import React from "react";
 
 function DatasupportList(){
 
@@ -61,7 +62,7 @@ return (
             <div className="row">
             <div className="col-lg-10">
             </div>
-            <div className="col-lg-2"> 
+            <div className="col-lg-2">
             <Link to="/Religio/Datasupportadd" className="btn btn-gradient-light">Add</Link>
              </div>
           </div>
@@ -97,8 +98,6 @@ return (
         </div>
       </div>
     </div>
-
     );
-
 }
 export default DatasupportList;

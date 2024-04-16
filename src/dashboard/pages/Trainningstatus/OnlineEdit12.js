@@ -3,7 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 
 function OnlinetrdataEdit() {
@@ -31,7 +31,7 @@ function OnlinetrdataEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const navigate = useNavigate();
 

@@ -18,14 +18,14 @@ function OurClientLayouts() {
       <div className="container-fluid page-body-wrapper">
         <Sidemenubar />
         <div className="main-panel">
-          {pathname == "/Religio/HomeSections/OurClient" && <OurclientList />}
-          {pathname == "/Religio/HomeSections/OurClient/Create" && (
+          {pathname === "/Religio/HomeSections/OurClient" && <OurclientList />}
+          {pathname === "/Religio/HomeSections/OurClient/Create" && (
             <OurclientCreate />
           )}
           {pathname.includes("/Religio/HomeSections/OurClient/edit/") && (
             <OurclientEdit />
           )}
-          {pathname == "" && <OurclientView />}
+          {pathname === "" && <OurclientView />}
           <Footer />
         </div>
       </div>

@@ -6,7 +6,6 @@ import AppUrl from "../../Api/Url";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import $ from "jquery";
 import DataTable from "react-data-table-component";
 
 function OurclientList() {
@@ -93,7 +92,7 @@ function OurclientList() {
       name: "Province",
       selector: (row) => (
         <>
-          <a onClick={(e) => handleShow(e, row)} className="my-component">
+          <a href={() => false} onClick={(e) => handleShow(e, row)} className="my-component">
             {row.prname}
           </a>
         </>
@@ -112,7 +111,7 @@ function OurclientList() {
           <img
             src={AppUrl + "/Ourclient/logo/" + row.logo}
             className="me-2"
-            alt="image"
+            alt="logo"
             onClick={(e) => handleShow(e, row)}
             style={{
               cursor: "pointer",
@@ -130,26 +129,29 @@ function OurclientList() {
       cell: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => handleShow(e, row)}
             style={{ cursor: "pointer" }}
-            className="mdi mdi-eye"></a>
+            className="mdi mdi-eye"> </a>
           &nbsp;
           {isLogedIn?.role === "admin" && (
             <>
               <a
+                href={() => false}
                 className="mdi mdi-pencil-box"
                 onClick={(e) => handleedit(e, row.id)}
                 style={{ cursor: "pointer" }}
-                id="print"></a>
+                id="print"> </a>
             </>
           )}
           {isLogedIn?.role === "admin" && (
             <>
               <a
+                href={() => false}
                 className="mdi mdi-delete"
                 onClick={(e) => deleteClientLogo(e, row.id)}
                 style={{ cursor: "pointer" }}
-                id="print"></a>
+                id="print"> </a>
             </>
           )}
         </>
@@ -226,7 +228,7 @@ function OurclientList() {
                 </div>
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" && (
+                  {isLogedIn?.role === "admin" && (
                     <Link to="/Religio/HomeSections/OurClient/Create">
                       <i
                         class="fa-solid fa-user-plus"
@@ -304,6 +306,7 @@ function OurclientList() {
                         <img
                           src={AppUrl + "/Ourclient/logo/" + preImg.logo}
                           height={130}
+                          alt="logo"
                         />
                       </center>
                     </div>

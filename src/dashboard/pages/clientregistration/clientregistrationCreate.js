@@ -3,7 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -25,8 +25,6 @@ function ClientRegistrationCreate() {
     register,
     handleSubmit,
     reset,
-    setValue,
-    watch,
     formState: { errors },
   } = useForm({ mode: "onChange" });
   const navigate = useNavigate();
@@ -458,7 +456,7 @@ function ClientRegistrationCreate() {
                         popperModifiers={{}}
                       />
                     </div>
-                    {error?.selectedDate != "" && (
+                    {error?.selectedDate !== "" && (
                       <div className="text-danger text_error">
                         <label className="errlabel">
                           {error?.selectedDate}
@@ -874,14 +872,13 @@ function ClientRegistrationCreate() {
                       </label>
                       <div className="col-sm-9">
                         <input
-                          type="text"
+                          type="tel"
                           className="form-control proadd"
                           name="mobile"
                           {...register("mobile", {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />

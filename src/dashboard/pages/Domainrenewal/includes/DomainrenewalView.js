@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ApiUrl from "../../Api/Api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import $ from "jquery";
 
 function DomainrenewalView() {
@@ -12,11 +10,8 @@ function DomainrenewalView() {
   const {
     register,
     reset,
-    handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${ApiUrl}/Religio/Domainrenewal/edit/${id}`)
@@ -29,7 +24,7 @@ function DomainrenewalView() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   return (
     <div className="content-wrapper">

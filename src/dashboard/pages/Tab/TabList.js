@@ -1,13 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import {
-  Link,
-  useNavigate,
   useParams,
   useSearchParams,
-  use,
 } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
@@ -43,7 +38,7 @@ function TabLists() {
 
   useEffect(() => {
     dash();
-  }, []);
+  });
   const [register, Setview] = useState([]);
   const [pay, setpay] = useState([]);
 

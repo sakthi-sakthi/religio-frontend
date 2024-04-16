@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import axios from "axios"; 
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 
 function IosdataEdit() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: 'onChange' });  
@@ -17,13 +17,9 @@ function IosdataEdit() {
     }).catch((err) => {
         console.log(err.message);
     })
-  }, [])
-
-
+  })
 
 const navigate = useNavigate();
-
-
 const handleNavigation=()=>{
   navigate({
     pathname:"/Religio/Tab",

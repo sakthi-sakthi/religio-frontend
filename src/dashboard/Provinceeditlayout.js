@@ -1,8 +1,6 @@
 import Navbar from "./includes/Navbar";
 import Sidemenubar from "./includes/Sidemenubar";
-import Main from "./includes/Main";
 import Footer from "./includes/Footer";
-
 import "./scss/style.scss";
 import ProvinceEdit from "./pages/Province/ProvinceEdit";
 

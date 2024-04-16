@@ -88,9 +88,9 @@ return (
                     <tr key={item.id}>
                         <td>{YYYYMMDDTODDMMYYYY(item.housedate) }</td>
                         <td>{item.housestatus}</td>
-                        <td id="noprint"><a onClick={(e) => HousecommunityEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
+                        <td id="noprint"><a href={() => false} onClick={(e) => HousecommunityEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit </a>
                         
-                        &nbsp;<a onClick={(e) => HousecommunityDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                        &nbsp;<a href={() => false} onClick={(e) => HousecommunityDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete </a>
                     </td>
                     </tr>   
                     ))

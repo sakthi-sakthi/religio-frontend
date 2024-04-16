@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../../Api/Api";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import $ from "jquery";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 function DomainrenewalEdit() {
@@ -74,7 +73,7 @@ function DomainrenewalEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const regex = new RegExp(
     "(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"

@@ -2,10 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../../Api/Api";
-import AppUrl from "../../Api/Url";
 import { Link, useNavigate } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 import DataTable from "react-data-table-component";
 
 function OurCustomerSayList() {
@@ -89,6 +86,7 @@ function OurCustomerSayList() {
       selector: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => ViewOurCustomerSay(e, row.id)}
             className="my-component">
             {row.crname}
@@ -107,13 +105,15 @@ function OurCustomerSayList() {
       cell: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => ViewOurCustomerSay(e, row.id)}
             style={{ cursor: "pointer" }}
-            className="mdi mdi-eye"></a>
+            className="mdi mdi-eye"> </a>
           &nbsp;
           {isLogedIn?.role === "admin" && (
             <>
               <a
+                href={() => false}
                 onClick={(e) => EditOurCustomerSay(e, row.id)}
                 style={{ cursor: "pointer" }}
                 className="mdi mdi-pencil-box"
@@ -126,10 +126,11 @@ function OurCustomerSayList() {
           {isLogedIn?.role === "admin" && (
             <>
               <a
+                href={() => false}
                 className="mdi mdi-delete"
                 onClick={(e) => deleteOurCustomerSay(e, row.id)}
                 style={{ cursor: "pointer" }}
-                id="print"></a>
+                id="print"> </a>
             </>
           )}
         </>
@@ -206,7 +207,7 @@ function OurCustomerSayList() {
                 </div>
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" && (
+                  {isLogedIn?.role === "admin" && (
                     <Link to="/Religio/HomeSections/OurCustomerSay/Create">
                       <i
                         class="fa-solid fa-user-plus"

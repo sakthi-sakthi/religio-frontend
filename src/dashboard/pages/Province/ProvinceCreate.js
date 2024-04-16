@@ -401,7 +401,6 @@ function ProvinceCreate() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />
@@ -537,7 +536,6 @@ function ProvinceCreate() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={
                             errors?.contactmobile ? "true" : "false"

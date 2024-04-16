@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import $ from "jquery";
 
 function ProvinceEdit() {
   const {
@@ -34,7 +33,7 @@ function ProvinceEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   useEffect(() => {
     fetch(`${ApiUrl}/Religio/Province/Congregation`)
@@ -371,7 +370,6 @@ function ProvinceEdit() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />
@@ -507,7 +505,6 @@ function ProvinceEdit() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={
                             errors?.contactmobile ? "true" : "false"

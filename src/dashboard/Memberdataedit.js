@@ -1,11 +1,8 @@
 import Navbar from "./includes/Navbar";
 import Sidemenubar from "./includes/Sidemenubar";
-import Main from "./includes/Main";
 import Footer from "./includes/Footer";
 
 import "./scss/style.scss";
-import CongregationEdit from "./pages/Congregation/CongregationEdit";
-import ProjectstatusEdit from "./pages/Projectstatus/projectstatusEdit";
 import MemberdataEdit from "./pages/Memberdata/MemberdataEdit";
 
 function Memberdataedit() {

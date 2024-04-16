@@ -3,8 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, Routes, Route, useNavigate, useParams, } from 'react-router-dom';
-import Navbar from "../../includes/Navbar";
+import {useParams, } from 'react-router-dom';
 
 function Mobileappcreate() {
 
@@ -26,7 +25,7 @@ function Mobileappcreate() {
     }).catch((err) => {
       console.log(err.message);
     })
-  }, [])
+  })
 
 
   function onSubmitmobileappcreate(data, e) {
@@ -84,7 +83,7 @@ function Mobileappcreate() {
 
 
             <div className="text-center">
-            {isLogedIn?.role == "admin" ? (
+            {isLogedIn?.role === "admin" ? (
               <button type="submit" class="btn btn-gradient-light" onClick={toggleEditability} value="Submit" >
                 {isEditable ? 'Save' : 'Edit'}
               </button>

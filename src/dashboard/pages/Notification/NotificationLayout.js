@@ -1,7 +1,6 @@
 import Navbar from "../../includes/Navbar";
 import Sidemenubar from "../../includes/Sidemenubar";
 import Footer from "../../includes/Footer";
-import { useLocation } from "react-router-dom";
 
 import NotificationShow from "./Notification";
 function NotificationShowlayout() {

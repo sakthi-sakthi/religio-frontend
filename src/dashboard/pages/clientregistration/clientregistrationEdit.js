@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
 import AppUrl from "../Api/Url";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -74,7 +74,7 @@ function ClientRegistrationEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const [file, fileData] = useState();
   useEffect(() => {
@@ -876,14 +876,14 @@ function ClientRegistrationEdit() {
                       </label>
                       <div className="col-sm-9">
                         <input
-                          type="text"
+                          type="tel"
                           className="form-control regdata"
                           name="mobile"
                           {...register("mobile", {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
+                            // pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />

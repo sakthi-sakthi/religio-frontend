@@ -1,10 +1,9 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
 import AppUrl from "../Api/Url";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import $ from "jquery";
 
 function ClientRegistrationViews() {
@@ -40,7 +39,7 @@ function ClientRegistrationViews() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const [file, fileData] = useState();
   useEffect(() => {
@@ -54,7 +53,7 @@ function ClientRegistrationViews() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const [congre, Congregation] = useState([]);
 
@@ -69,10 +68,10 @@ function ClientRegistrationViews() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
   const [Pro, SetProvince] = useState([]);
 
-  const navigate = useNavigate();
+  
 
   function countrySelect(event) {
     var value = event.target.value;
@@ -93,10 +92,10 @@ function ClientRegistrationViews() {
       });
   }
   const changeHandler = (event) => {
-    setSelectedFile(event.target.files[0]);
+    // setSelectedFile(event.target.files[0]);
     $(".filelabel").hide();
   };
-  const [selectedFile, setSelectedFile] = useState();
+
 
   return (
     <div className="content-wrapper">
@@ -689,7 +688,7 @@ function ClientRegistrationViews() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
+                            // pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />

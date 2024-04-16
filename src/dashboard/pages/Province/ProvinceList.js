@@ -99,7 +99,7 @@ function ProvinceList() {
       name: "Province",
       selector: (row) => (
         <>
-          <a onClick={(e) => ViewProvince(e, row.id)} className="my-component">
+          <a href={() => false} onClick={(e) => ViewProvince(e, row.id)} className="my-component">
             {row.province}
           </a>
         </>
@@ -121,23 +121,26 @@ function ProvinceList() {
       cell: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => ViewProvince(e, row.id)}
             style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
             className="mdi mdi-eye"
-            id="print"></a>
+            id="print"> </a>
           {isLogedIn?.role === "admin" && (
             <>
               <a
+                href={() => false}
                 onClick={(e) => EditProvince(e, row.id)}
                 style={{ cursor: "pointer", paddingRight: 4, color: "black" }}
                 className="mdi mdi-pencil-box"
-                id="print"></a>
+                id="print"> </a>
 
               <a
+                href={() => false}
                 onClick={(e) => deleteProvince(e, row.id)}
                 style={{ cursor: "pointer", color: "black" }}
                 className="mdi mdi-delete"
-                id="print"></a>
+                id="print"> </a>
             </>
           )}
         </>
@@ -187,14 +190,14 @@ function ProvinceList() {
     SetProvince(filter);
   }
   const [pending, setPending] = React.useState(true);
-  const [rows, setRows] = React.useState([]);
+  // const [rows, setRows] = React.useState([]);
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      setRows(Pro);
+      // setRows(Pro);
       setPending(false);
     }, 500);
     return () => clearTimeout(timeout);
-  }, []);
+  });
   return (
     <div className="content-wrapper">
       <div className="page-header">
@@ -221,7 +224,7 @@ function ProvinceList() {
                 </div>
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" ? (
+                  {isLogedIn?.role === "admin" ? (
                     <Link to="/Religio/Province/Add">
                       <i
                         class="fa-solid fa-user-plus"

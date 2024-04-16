@@ -18,8 +18,8 @@ function DomainRenewalLayouts() {
       <div className="container-fluid page-body-wrapper">
         <Sidemenubar />
         <div className="main-panel">
-          {pathname == "/Religio/DomainRenewal" && <DomainrenewalList />}
-          {pathname == "/Religio/DomainRenewal/Create" && (
+          {pathname === "/Religio/DomainRenewal" && <DomainrenewalList />}
+          {pathname === "/Religio/DomainRenewal/Create" && (
             <DomainrenewalCreate />
           )}
           {pathname.includes("/Religio/DomainRenewal/Edit/") && (

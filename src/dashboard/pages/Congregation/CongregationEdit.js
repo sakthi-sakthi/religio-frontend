@@ -4,14 +4,13 @@ import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import $ from "jquery";
+
 
 function CongregationEdit() {
   const {
     register,
     handleSubmit,
     reset,
-    setValue,
     formState: { errors },
   } = useForm({ mode: "onChange" });
   const navigate = useNavigate();
@@ -34,7 +33,7 @@ function CongregationEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   function onSubmitCongregationform(data, e) {
     axios
@@ -325,7 +324,7 @@ function CongregationEdit() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
+                            // pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />

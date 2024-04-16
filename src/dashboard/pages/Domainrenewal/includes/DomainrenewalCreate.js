@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ApiUrl from "../../Api/Api";
 import { Link, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
@@ -10,7 +10,6 @@ import "react-datepicker/dist/react-datepicker.css";
 function DomainrenewalCreate() {
   const {
     register,
-    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });

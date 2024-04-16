@@ -3,8 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, Routes, Route, useNavigate, useParams } from "react-router-dom";
-import Navbar from "../../includes/Navbar";
+import {useParams } from "react-router-dom";
 
 function Memberdatacreate() {
   const {
@@ -32,7 +31,7 @@ function Memberdatacreate() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   // const navigate = useNavigate();
 
@@ -123,7 +122,7 @@ function Memberdatacreate() {
             </div>
 
             <div className="text-center">
-              {isLogedIn?.role == "admin" ? (
+              {isLogedIn?.role === "admin" ? (
                 <button
                   type="submit"
                   class="btn btn-gradient-light"

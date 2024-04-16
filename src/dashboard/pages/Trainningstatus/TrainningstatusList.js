@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../Api/Api";
 import { Link, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import { YYYYMMDDTODDMMYYYY } from "../../../function/date";
 import { Rating } from 'react-simple-star-rating';
 
@@ -154,9 +153,9 @@ return (
                               /></td>
                         
                         <td id="noprint">
-                          <a onClick={(e) => onsitestatusEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
+                          <a href={() => false} onClick={(e) => onsitestatusEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
                         
-                        &nbsp;<a onClick={(e) => onsitestatusDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                        &nbsp;<a href={() => false} onClick={(e) => onsitestatusDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
                     </td>
                     </tr>   
                     ))
@@ -194,9 +193,9 @@ return (
                               /></td>
                               
                         <td id="noprint">
-                          <a onClick={(e) => onlinestatusEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
+                          <a href={() => false} onClick={(e) => onlinestatusEdit(e, item.id)} style={{ cursor: 'pointer' }}  className="mdi mdi-pencil-box" id="print">Edit</a>
                         
-                        &nbsp;<a onClick={(e) => onlinestatusDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
+                        &nbsp;<a href={() => false} onClick={(e) => onlinestatusDelete(e, item.id)} style={{ cursor: 'pointer' }} id className="mdi mdi-delete" >Delete</a>
                     </td>
                     </tr>   
                     ))

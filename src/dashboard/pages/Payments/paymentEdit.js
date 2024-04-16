@@ -43,7 +43,7 @@ function PaymentEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const navigate = useNavigate();
 
@@ -142,7 +142,7 @@ function PaymentEdit() {
   };
 
   // Auto Calculate Balance
-  const [provalue, setProvalue] = useState("");
+  // const [provalue, setProvalue] = useState("");
   const [paidvalue, setPaidvalue] = useState("");
   const [amcvalue, setAmcvalue] = useState("");
   const [orgvalue, setOrgvalue] = useState("");
@@ -150,7 +150,7 @@ function PaymentEdit() {
   const [paidbalvalue, setPaidbalvalue] = useState("");
 
   const projectvalueChange = (event, e) => {
-    setProvalue(event.target.value);
+    // setProvalue(event.target.value);
     setOrgvalue(event.target.value);
   };
 

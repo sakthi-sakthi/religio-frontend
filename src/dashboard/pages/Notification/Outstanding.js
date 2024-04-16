@@ -116,22 +116,22 @@ function OutstandingShow() {
     );
     notificationData(filter);
   }
-  const exportcongregationTable = () => {
-    axios
-      .get(`${ApiUrl}/Religio/Outstanding/export`)
-      .then((response) => {
-        // Trigger file download
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", "congregation_data.csv");
-        document.body.appendChild(link);
-        link.click();
-      })
-      .catch((error) => {
-        console.error("Export error:", error);
-      });
-  };
+  // const exportcongregationTable = () => {
+  //   axios
+  //     .get(`${ApiUrl}/Religio/Outstanding/export`)
+  //     .then((response) => {
+  //       // Trigger file download
+  //       const url = window.URL.createObjectURL(new Blob([response.data]));
+  //       const link = document.createElement("a");
+  //       link.href = url;
+  //       link.setAttribute("download", "congregation_data.csv");
+  //       document.body.appendChild(link);
+  //       link.click();
+  //     })
+  //     .catch((error) => {
+  //       console.error("Export error:", error);
+  //     });
+  // };
   return (
     <div className="content-wrapper">
       <div className="page-header">

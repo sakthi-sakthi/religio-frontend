@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import ApiUrl from "../Api/Api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import $ from "jquery";
 
 function ProvinceView() {
@@ -13,8 +11,6 @@ function ProvinceView() {
     reset,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-
-  const navigate = useNavigate();
   const country = require("country-state-city").Country;
   const value = country.getAllCountries();
 
@@ -36,7 +32,7 @@ function ProvinceView() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   useEffect(() => {
     fetch(`${ApiUrl}/Religio/Province/Congregation`)
@@ -351,7 +347,6 @@ function ProvinceView() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={errors?.mobile ? "true" : "false"}
                         />
@@ -487,7 +482,6 @@ function ProvinceView() {
                             required: true,
                             minLength: 10,
                             maxLength: 12,
-                            pattern: /^[]?\d*(?:[.,]\d*)?$/,
                           })}
                           aria-invalid={
                             errors?.contactmobile ? "true" : "false"

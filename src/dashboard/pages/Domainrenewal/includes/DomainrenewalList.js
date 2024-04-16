@@ -2,11 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ApiUrl from "../../Api/Api";
-import AppUrl from "../../Api/Url";
 import { Link, useNavigate } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import $ from "jquery";
 import DataTable from "react-data-table-component";
 
 function DomainrenewalList() {
@@ -86,7 +82,7 @@ function DomainrenewalList() {
       name: "Domain Name",
       cell: (row) => (
         <>
-          <a onClick={(e) => handleShow(e, row.id)} className="my-component">
+          <a href={() => false} onClick={(e) => handleShow(e, row.id)} className="my-component">
             {row.sitename}
           </a>
         </>
@@ -113,24 +109,27 @@ function DomainrenewalList() {
       cell: (row) => (
         <>
           <a
+            href={() => false}
             onClick={(e) => handleShow(e, row.id)}
             style={{
               cursor: "pointer",
               paddingRight: 4,
               color: "black",
             }}
-            className="mdi mdi-eye"></a>
+            className="mdi mdi-eye"> </a>
 
           <a
+            href={() => false}
             onClick={(e) => handleEdit(e, row.id)}
             style={{
               cursor: "pointer",
               paddingRight: 4,
               color: "black",
             }}
-            className="mdi mdi-pencil-box"></a>
+            className="mdi mdi-pencil-box"> </a>
 
           <a
+            href={() => false}
             className="mdi mdi-delete"
             onClick={(e) => deleteClientLogo(e, row.id)}
             style={{
@@ -138,7 +137,7 @@ function DomainrenewalList() {
               paddingRight: 4,
               color: "black",
             }}
-            id="print"></a>
+            id="print"> </a>
         </>
       ),
       width: "100px",
@@ -213,7 +212,7 @@ function DomainrenewalList() {
                 </div>
                 <div className="col-lg-6"></div>
                 <div className="col-lg-2">
-                  {isLogedIn?.role == "admin" && (
+                  {isLogedIn?.role === "admin" && (
                     <Link to="/Religio/DomainRenewal/Create">
                       <i
                         class="fa-solid fa-user-plus"

@@ -8,12 +8,7 @@ import $ from "jquery";
 
 function OurclientEdit() {
   const [Congre, Congregation] = useState([]);
-  const [Prov, Province] = useState([]);
   const [Client, Clients] = useState([]);
-
-  const [congregation, Setcongregation] = useState();
-  const [province, Setprovince] = useState();
-  const [client, Setclient] = useState();
   const [logo, SetLogo] = useState();
   const [logoshow, showlogo] = useState();
 
@@ -40,7 +35,7 @@ function OurclientEdit() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  });
 
   const fetchData = () => {
     fetch(`${ApiUrl}/Religio/Clientregistration`)
@@ -87,12 +82,12 @@ function OurclientEdit() {
 
   function CongregationSelect(event) {
     var id = event.target.value;
-    Setcongregation(event.target.value);
+    // Setcongregation(event.target.value);
     reset({ province: "", client: "" });
     axios
       .get(`${ApiUrl}/Religio/Province/get/${id}`)
       .then((response) => {
-        Province(response.data.data);
+        // Province(response.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -101,7 +96,7 @@ function OurclientEdit() {
 
   function provinceSelect(event) {
     var id = event.target.value;
-    Setprovince(event.target.value);
+    // Setprovince(event.target.value);
     axios
       .get(`${ApiUrl}/Religio/Clients/get/${id}`)
       .then((response) => {
@@ -114,7 +109,7 @@ function OurclientEdit() {
   }
 
   function clientSelect(event) {
-    Setclient(event.target.value);
+    // Setclient(event.target.value);
   }
 
   function logoSelect(event) {
