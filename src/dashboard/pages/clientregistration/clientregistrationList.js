@@ -23,20 +23,21 @@ function ClientregistrationList() {
         console.error("Export error:", error);
       });
   };
-  const fetchData = () => {
-    fetch(`${ApiUrl}/Religio/Clientregistration`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((resp) => {
-        SetClientregister(resp.data);
-        FilterClientregister(resp.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
+  
   useEffect(() => {
+    const fetchData = () => {
+      fetch(`${ApiUrl}/Religio/Clientregistration`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((resp) => {
+          SetClientregister(resp.data);
+          FilterClientregister(resp.data);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    };
     fetchData();
   }, []);
   const isLogedIn = JSON.parse(sessionStorage.getItem("userDetails"));
@@ -62,7 +63,7 @@ function ClientregistrationList() {
         axios
           .delete(`${ApiUrl}/Religio/Clientregistration/${id}`)
           .then((res) => {
-            fetchData();
+            // fetchData();
           });
         Swal.fire("Deleted!", "Your record has been deleted.", "success");
       }
